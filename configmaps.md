@@ -1,13 +1,20 @@
 # Hands on: ConfigMaps
 
-kubectl create configmap db-config --from-literal=db=staging
+Create a new ConfigMap using a literal value:
+`kubectl create configmap db-config --from-literal=db=staging`
 
-kubectl create configmap db-config --from-env-file=config.env
+Create a new ConfigMap using an `.env` file:
+`kubectl create configmap db-config --from-env-file=config.env`
 
-kubectl create configmap db-config --from-file=config.txt
+Create a new ConfigMap using a text file:
+`kubectl create configmap db-config --from-file=config.txt`
 
-kubectl create configmap db-config --from-file=app-config
+Create a new ConfigMap using a directory:
+`kubectl create configmap db-config --from-file=app-config`
 
+Example of using a ConfigMap as environment in a pod:
+
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -19,5 +26,7 @@ spec:
     envFrom:
     - configMapRef:
         name: db-config
+```
 
-kubectl exec configured-pod -- env
+Create the pod using the configuration file and check the environment variables:
+`kubectl exec configured-pod -- env`

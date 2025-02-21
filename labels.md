@@ -1,22 +1,31 @@
 # Hands on: Labels
 
-kubectl describe pod my-deploy…
+Look at the details of a pod from the deployment (replace `my-deploy-` with the actual pod name):
+`kubectl describe pod my-deploy-`
 
-kubectl describe replicaset my-deploy…
+Look at the details of a replicaset from the deployment (replace `my-deploy-` with the actual replicaset name):
+`kubectl describe replicaset my-deploy-`
 
-kubectl run labeled-pod --image=nginx \
-  --restart=Never --labels=tier=backend,env=dev
+Create a new pod with labels using the `kubectl run` command:
+`kubectl run labeled-pod --image=nginx --restart=Never --labels=tier=backend,env=dev`
 
-kubectl describe pod labeled-pod | grep -C 2 Labels:
+Look at the details of the pod:
+`kubectl describe pod labeled-pod | grep -C 2 Labels:`
 
-kubectl label pod labeled-pod region=eu
+Add a label to the pod:
+`kubectl label pod labeled-pod region=eu`
 
-kubectl get pod labeled-pod --show-labels
+Review the labels of the pod:
+`kubectl get pod labeled-pod --show-labels`
 
-kubectl label pod labeled-pod region=us --overwrite
+Change a label on the pod:
+`kubectl label pod labeled-pod region=us --overwrite`
 
-kubectl get pod labeled-pod --show-labels
+Review the labels of the pod:
+`kubectl get pod labeled-pod --show-labels`
 
-kubectl label pod labeled-pod region-
+Remove a label from the pod:
+`kubectl label pod labeled-pod region-`
 
-kubectl get pod labeled-pod --show-labels
+Review the labels of the pod:
+`kubectl get pod labeled-pod --show-labels`

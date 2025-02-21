@@ -1,4 +1,4 @@
-# Kubernetes Workshop
+# SQUER Kubernetes Workshop
 
 Please find all relevant files or commands for the hands on exercises in this repository.
 
@@ -7,7 +7,7 @@ Please find all relevant files or commands for the hands on exercises in this re
 - [Docker](https://www.docker.com/)
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-## Exercises
+## Hands On Exercises
 
 - [Cluster Setup](cluster-setup.md)
 - [Working with Kubectl](working-with-kubectl.md)

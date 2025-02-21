@@ -1,21 +1,19 @@
 # Hands on: Pods
 
-kubectl run nginx --image=nginx
+Create a new pod using the `kubectl run` command:
+`kubectl run nginx --image=nginx`
 
-kubectl logs nginx
+See the logs of this pod:
+`kubectl logs nginx`
 
-kubectl exec -it nginx -- sh
+Open a shell in the pod:
+`kubectl exec -it nginx -- sh`
 
-kubectl run nginx --image=nginx
+List all pods:
+`kubectl get pods`
 
-kubectl get pods
+Delete the pod:
+`kubectl delete pod nginx`
 
-kubectl run nginx --image=nginx
-
-kubectl get pods
-
-kubectl logs nginx
-
-kubectl delete pod nginx
-
-kubectl get pods
+List all pods again for verification:
+`kubectl get pods`

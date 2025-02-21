@@ -1,20 +1,28 @@
 # Hands on: Namespaces
 
-kubectl get namespace
+List all namespaces:
+`kubectl get namespace`
 
-kubectl create namespace test
+Create a new namespace using the `kubectl create namespace` command:
+`kubectl create namespace test`
 
-kubectl run test-app -–image=nginx -–namespace=test
+Run a new pod in the new namespace using the `kubectl run` command:
+`kubectl run test-app -–image=nginx -–namespace=test`
 
+List all pods:
+`kubectl get pods`
 
-kubectl get pods
+List all pods in the new namespace:
+`kubectl get pods –-namespace=test`
 
-kubectl get pods –-namespace=test
+List all pods in all namespaces:
+`kubectl get pods -A`
 
-kubectl get pods -A
+Change the current namespace:
+`kubectl config set-context --current --namespace=<namespace-name>`
 
-kubectl config set-context --current --namespace=<namespace-name>
+Delete the new namespace:
+`kubectl delete namespace test`
 
-kubectl delete namespace test
-
-kubectl get pods -A
+List all pods in all namespaces:
+`kubectl get pods -A`
