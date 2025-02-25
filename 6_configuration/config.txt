@@ -1,0 +1,6 @@
+game.properties: |
+  player.name=Player
+  player.power=5
+  player.magic=5
+  player.charisma=10
+  player.luck=5

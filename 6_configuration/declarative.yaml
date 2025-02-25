@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  config.txt: |
+    player.name=Player
+    player.power=5
+    player.magic=5
+    player.charisma=10
+    player.luck=5
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: from-file
